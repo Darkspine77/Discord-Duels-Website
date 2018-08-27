@@ -107,6 +107,10 @@ body{
     justify-content: center;
 }
 
+.clickable{
+    cursor: pointer;
+}
+
 .hidden{
     display: none;
 }
