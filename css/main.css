@@ -1,0 +1,161 @@
+body{
+    overflow-x: hidden;
+}
+
+#header-space{
+    background-color:#36393F;
+    width: 100vw;
+    height: 30vh;
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1%;
+}
+
+
+#header-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#header-message{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+body{
+    background-color: #36393F;
+}
+
+#content-grid{
+    display: grid;
+    grid-template-columns: 40% 40%;
+    grid-column-gap: 5%;
+    grid-row-gap: 10%;
+}
+
+.content-img{
+    width:  75%;
+    height: 75%;
+    border-color: white;
+    border-style: solid;
+    border-width: 5px;
+    border-radius: 5px;
+}
+
+.content-text{
+    background-color: #36393F;
+    border-radius: 10px;
+    color: white;
+    text-align: center;
+    font-size: 300%;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.content-box{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    display: flex;
+    justify-content: center;
+}
+
+#gameplay-holder{
+    justify-content: center;
+    flex-direction: column;
+}
+
+#content-space{
+    display: flex;
+    flex-direction: column;
+    background-color:#7289DA;
+    border-style: solid;
+    border-width: 1vh;
+    border-color: #4F5F99;
+    align-items: center;
+}
+
+#features-holder{
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.keypoint{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.keypoint-text{
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5vw;
+    text-align: center;
+}
+
+.keypoint-img{
+    width: 100%;
+    border-radius: 100%;
+    border-style: solid;
+    border-color: #7289DA;
+}
+
+.tab-opener{
+    display: flex;
+    justify-content: center;
+}
+
+.hidden{
+    display: none;
+}
+
+.fade-in-section{
+    display: flex;
+    animation-name: fade-in;
+    animation-duration: 2s;
+}
+
+.fade-in{
+    animation-name: fade-in;
+    animation-duration: 1s;
+}
+
+#play-holder{
+    flex-direction: column;
+    align-items: center;
+}
+
+#play-button{
+    width: 15%;
+    height: 15%;
+    border-radius: 100%;
+}
+
+#profile-icon{
+    width: 15%;
+    height: 15%;
+    border-radius: 100%;
+}
+
+#contact-holder{
+    flex-direction: column;
+    align-items: center;
+}
+
+#profile-pics{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+@keyframes fade-in {
+    0%   {opacity: 0;}
+    100% {opacity: 1;}
+}
+
+@keyframes fade-in {
+    0%   {opacity: 0;}
+    100% {opacity: 1;}
+}
