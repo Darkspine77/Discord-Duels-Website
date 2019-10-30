@@ -1,0 +1,86 @@
+#creatureFilterSelections{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#staticHeader > .creatureDiv > p {
+    color: #000;
+}
+
+#staticHeader > .creatureDiv > ul > li {
+    color: #000;
+}
+
+#staticHeader > .creatureDiv > h1 {
+    color: #000;
+}
+
+.creatureDiv > p {
+    color: #E8EEF2;
+}
+
+.creatureDiv > ul > li {
+    color: #E8EEF2;
+}
+
+.creatureDiv > h1 {
+    color: #E8EEF2;
+}
+
+.creatureDiv > h3 {
+    color: #E8EEF2;
+}
+
+.creatureDiv > ul{
+    padding-left: 0; 
+    list-style-type: none;
+}
+
+.creatureDiv > *{
+    margin-top: 0;
+    margin-bottom: 0;
+    border-color: black;
+    border-width: 3px;
+    border-right-style: solid;
+}
+
+.creatureDiv {
+    background-color:#36393F;
+    margin-top:2%;
+    margin-bottom:2%;
+    display: flex;
+    flex-direction: row;
+    border-color: black;
+    border-width: 3px;
+    border-style: solid;
+}
+
+.creatureTier{
+    max-width: 10%;
+    min-width: 10%;
+    text-align: center;
+}
+
+.creatureName{
+    max-width: 29%;
+    min-width: 29%;
+}
+
+.creatureID{
+    max-width: 10%;
+    min-width: 10%;
+    text-align: center;
+}
+
+.creatureWeapon{
+    max-width: 20%;
+    min-width: 20%;
+    text-align: center;
+}
+
+.dropsList{
+    max-width: 20%;
+    min-width: 20%;
+    text-align: center;
+}

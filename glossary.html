@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/glossaryWeapon.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/glossaryItem.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/glossaryEffect.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/glossaryCreature.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/glossary.css" />
+    <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
+    <script src="js/glossary.js" defer></script>
+    <link rel="apple-touch-icon" sizes="57x57" href="images/ico/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="images/ico/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="images/ico/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="images/ico/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="images/ico/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="images/ico/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="images/ico/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="images/ico/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="images/ico/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192"  href="images/ico/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/ico/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/ico/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/ico/favicon-16x16.png">
+    <link rel="manifest" href="images/ico/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Discord Duels" />
+    <meta property="og:description" content="Get ready to spend even more time on Discord" />
+    <meta property="og:image" content="https://raw.githubusercontent.com/Darkspine77/Discord-Duels-Website/master/images/icon.png" />
+    <title>Discord Duels Glossary</title>
+</head>
+<body>
+    <div id="staticHeader">
+        <div id="header">
+                <ul>
+                    <li><button id="showWeapons">Weapons</button></li>
+                    <li><button id="showItems">Items</button></li>
+                    <li><button id="showCreatures">Creatures</button></li>
+                    <li><button id="showEffects">Effects</button></li>
+                </ul>
+        </div>
+        <div id="weaponFilterSelections">
+            <h1>Tier:</h1>
+            <select id="weaponTierSelected" onchange="filterWeapons()">
+                    <option value="0">None</option>
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                    <option value="7">7</option>
+                    <option value="8">8</option>
+                    <option value="9">9</option>
+                    <option value="10">10</option>
+                    <option value="boss">Boss</option>
+                    <option value="Faction">Faction</option>
+                    <option value="rare">Rare</option>
+                    <option value="legendary">Legendary</option>
+                    <option value="quest">Quest</option>
+                    <option value="roaming">Roaming</option>
+            </select>
+            <h1>Sort By:</h1>
+            <select id="weaponSortSelected" onchange="filterWeapons()">
+                    <option value="0">ID</option>
+                    <option value="1">Reverse ID</option>
+                    <option value="2">ABC...</option>
+                    <option value="3">XYZ...</option>
+                    <option value="4">Tier</option>
+                    <option value="5">Rush Damage</option>
+                    <option value="6">Strike Damage</option>
+                    <option value="7">Counter Damage</option>
+                    <option value="8">Overal Damage</option>
+            </select>
+        </div>
+        <div id="itemFilterSelections">
+                <h1>Tier:</h1>
+                <select id="itemTierSelected" onchange="filterItems()">
+                        <option value="0">All</option>
+                        <option value="none">None</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                </select>
+                <h1>Type:</h1>
+                <select id="itemTypeSelected" onchange="filterItems()">
+                        <option value="0">None</option>
+                        <option value="mob">Fusion</option>
+                        <option value="attribute">Attribute</option>
+                        <option value="remnant">Remnant</option>
+                </select>
+                <h1 id="sortTag">Sort By:</h1>
+                <select id="itemSortSelected" onchange="filterItems()">
+                        <option value="0">ID</option>
+                        <option value="1">Reverse ID</option>
+                        <option value="2">ABC...</option>
+                        <option value="3">XYZ...</option>
+                        <option value="4">Tier</option>
+                        <option value="5">Type</option>
+                </select>
+                <h1 id="sortFusionTag" class="hidden">Sort Fusion Item By:</h1>
+                <select id="itemFusionSortSelected" class="hidden" onchange="filterItems()">
+                        <option value="0">None</option>
+                        <option value="1">Rush Damage Boost</option>
+                        <option value="2">Strike Damage Boost</option>
+                        <option value="3">Counter Damage Boost</option>
+                        <option value="4">Rush Resistance Boost</option>
+                        <option value="5">Strike Resistance Boost</option>
+                        <option value="6">Counter Resistance Boost</option>
+                        <option value="7">Overall Damage Boost</option>
+                        <option value="8">Overall Resistance Boost</option>
+                        <option value="9">Overall Boost</option>
+                </select>
+        </div>
+        <div id="creatureFilterSelections">
+                <h1>Tier:</h1>
+                <select id="creatureTierSelected" onchange="filterCreatures()">
+                        <option value="0">None</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                </select>
+                <h1>Sort By:</h1>
+                <select id="creatureSortSelected" onchange="filterCreatures()">
+                        <option value="0">ID</option>
+                        <option value="1">Reverse ID</option>
+                        <option value="2">ABC...</option>
+                        <option value="3">XYZ...</option>
+                        <option value="4">Tier</option>
+                </select>
+        </div>
+        <div id="effectFilterSelections">
+                <h1>Modifier:</h1>
+                <select id="effectFilterModifier" onchange="filterEffects()">
+                        <option value="0">Any</option>
+                        <option value="none">None</option>
+                        <option value="heal">Heal</option>
+                        <option value="damage">Damage</option>
+                        <option value="lessdamage">Less Damage</option>
+                        <option value="%damage">% of Health Damage</option>
+                </select>
+                <h1>Status:</h1>
+                <select id="effectFilterStatus" onchange="filterEffects()">
+                        <option value="0">Any</option>
+                        <option value="none">None</option>
+                        <option value="stun">Stun</option>
+                        <option value="stagger">Stagger</option>
+                        <option value="dizzy">Dizzy</option>
+                        <option value="wound">Wound</option>
+                        <option value="speAug">Hindering/Hasting</option>
+                        <option value="strAug">Empowering/Weakening</option>
+                        <option value="resAug">Fortifying/Exposing</option>
+                </select>
+                <h1>Attack Trigger:</h1>
+                <select id="effectFilterTrigger" onchange="filterEffects()">
+                        <option value="-1">Any</option>
+                        <option value="0">Rush</option>
+                        <option value="1">Strike</option>
+                        <option value="2">Counter</option>
+                </select>
+                <h1>Sort By:</h1>
+                <select id="effectSortSelected" onchange="filterEffects()">
+                        <option value="0">ID</option>
+                        <option value="1">Reverse ID</option>
+                        <option value="2">ABC...</option>
+                        <option value="3">XYZ...</option>
+                </select>
+        </div>
+        <div class="weaponDiv" id="weaponglossdiv" style="margin-top:2%; margin-bottom:0; background-color: #7289DA">
+            <h1 class="weaponName">Name</h1>
+            <h1 class="weaponID">ID</h1>
+            <h1 class="weaponTier">Tier</h1>
+            <h1 class="weaponDescription">Description</h1>
+            <h1 class="statsList">Stats</h1>
+            <h1 class="effectsList">Effects</h1>
+        </div>
+        <div class="itemDiv hidden" id="itemglossdiv"  style="margin-bottom:0; background-color: #7289DA">
+            <h1 class="itemName">Name</h1>
+            <h1 class="itemID">ID</h1>
+            <h1 class="itemTier">Tier</h1>
+            <h1 class="itemDescription">Description</h1>
+            <h1 id="typeTitle" class="itemType">Type</h1>
+            <h1 id="fusionsTitle" class="hidden fusionsList">Fusions</h1>
+        </div>
+        <div class="creatureDiv hidden" id="creatureglossdiv"  style="margin-bottom:0; background-color: #7289DA">
+                <h1 class="creatureName">Name</h1>
+                <h1 class="creatureID">ID</h3>
+                <h1 class="creatureTier">Tier</h1>
+                <h1 class="creatureWeapon">Weapon</h1>
+                <h1 class="dropsList">Drops</h1>
+        </div>
+        <div class="effectDiv hidden" id="effectglossdiv"  style="margin-bottom:0; background-color: #7289DA">
+                <h1 class="effectName">Name</h1>
+                <h1 class="effectID">ID</h1>
+                <h1 class="effectDescription">Description</h1>
+                <h1 class="effectDefaultWeapons">Found On Weapons</h1>
+        </div>
+    </div>
+    <div id="reel">
+
+    </div>
+</body>
+</html>

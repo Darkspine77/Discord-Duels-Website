@@ -1,0 +1,54 @@
+#weaponDisplay{
+    margin-left: 5%;
+    margin-right: 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+    "title title info" 
+    "desc desc desc"
+    "rush strike counter"
+    "effects effects effects"
+    "prev home next"
+}
+
+#weaponDisplay > * {
+  padding: 2%;
+  text-align: center;
+  background-color:#7289DA;
+  border-color: #4F5F99;
+  border-width: 10px;
+  border-style: solid;
+}
+
+#weaponDesc{
+    grid-area: desc;
+}
+
+#weaponEffects{
+    grid-area: effects;
+}
+
+#weaponTitle{
+    grid-area: title;
+}
+
+#weaponInfo{
+    grid-area: info;
+}
+
+#rDamage{
+    grid-area: rush;
+}
+
+#sDamage{
+    grid-area: strike;
+}
+
+#cDamage{
+    grid-area: counter;
+}
+
+.damageStat{
+    font-size: 200%;    
+}

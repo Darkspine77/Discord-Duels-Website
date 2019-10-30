@@ -1,0 +1,93 @@
+#weaponFilterSelections{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#staticHeader > .weaponDiv > p {
+    color: #000;
+}
+
+#staticHeader > .weaponDiv > ul > li {
+    color: #000;
+}
+
+#staticHeader > .weaponDiv > h1 {
+    color: #000;
+}
+
+.weaponDiv > p {
+    color: #E8EEF2;
+}
+
+.weaponDiv > ul > li {
+    color: #E8EEF2;
+}
+
+.weaponDiv > h1 {
+    color: #E8EEF2;
+}
+
+.weaponDiv > ul{
+    padding-left: 0; 
+    list-style-type: none;
+}
+
+.weaponDiv > *{
+    margin-top: 0;
+    margin-bottom: 0;
+    border-color: black;
+    border-width: 3px;
+    border-right-style: solid;
+}
+
+.weaponDiv {
+    background-color:#36393F;
+    margin-top:2%;
+    margin-bottom:2%;
+    display: flex;
+    flex-direction: row;
+    border-color: black;
+    border-width: 3px;
+    border-style: solid;
+}
+
+.weaponDescription{
+    padding-left:2%;
+    padding-right:2%;
+}
+
+.weaponTier{
+    max-width: 5%;
+    min-width: 5%;
+    text-align: center;
+}
+
+.weaponName{
+    max-width: 20%;
+    min-width: 20%;
+}
+
+.weaponDescription{
+    max-width: 21%;
+    min-width: 21%;
+    text-align: center;
+}
+
+.weaponID{
+    max-width: 5%;
+    min-width: 5%;
+    text-align: center;
+}
+
+.statsList{
+    max-width: 20%;
+    min-width: 20%;
+    text-align: center;
+}
+
+.effectsList{
+    max-width: 20%;
+    min-width: 20%;
+    text-align: center;
+}

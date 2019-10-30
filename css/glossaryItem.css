@@ -1,0 +1,93 @@
+#itemFilterSelections{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#staticHeader > .itemDiv > p {
+    color: #000;
+}
+
+#staticHeader > .itemDiv > ul > li {
+    color: #000;
+}
+
+#staticHeader > .itemDiv > h1 {
+    color: #000;
+}
+
+.itemDiv > p {
+    color: #E8EEF2;
+}
+
+.itemDiv > ul > li {
+    color: #E8EEF2;
+}
+
+.itemDiv > h1 {
+    color: #E8EEF2;
+}
+
+.itemDiv > ul{
+    padding-left: 0; 
+    list-style-type: none;
+}
+
+.itemDiv > *{
+    margin-top: 0;
+    margin-bottom: 0;
+    border-color: black;
+    border-width: 3px;
+    border-right-style: solid;
+}
+
+.itemDiv {
+    background-color:#36393F;
+    margin-top:2%;
+    margin-bottom:2%;
+    display: flex;
+    flex-direction: row;
+    border-color: black;
+    border-width: 3px;
+    border-style: solid;
+}
+
+.itemDescription{
+    padding-left:2%;
+    padding-right:2%;
+}
+
+.itemTier{
+    max-width: 10%;
+    min-width: 10%;
+    text-align: center;
+}
+
+.itemName{
+    max-width: 29%;
+    min-width: 29%;
+}
+
+.itemDescription{
+    max-width: 26%;
+    min-width: 26%;
+    text-align: center;
+}
+
+.itemID{
+    max-width: 10%;
+    min-width: 10%;
+    text-align: center;
+}
+
+.itemType{
+    max-width: 20%;
+    min-width: 20%;
+    text-align: center;
+}
+
+.fusionsList{
+    max-width: 20%;
+    min-width: 20%;
+    text-align: center;
+}
