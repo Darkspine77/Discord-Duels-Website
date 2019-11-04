@@ -1,0 +1,58 @@
+#creatureDisplay{
+    margin-left: 5%;
+    margin-right: 5%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto auto auto;
+    grid-template-areas:
+    "title title info" 
+    "weapon weapon weapon" 
+    "level level level"
+    "drops drops drops"
+    "prev home next"
+}
+
+#creatureDisplay > * {
+  padding: 2%;
+  text-align: center;
+  background-color:#7289DA;
+  border-color: #4F5F99;
+  border-width: 10px;
+  border-style: solid;
+}
+
+#creatureLevelModifier{
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    margin: auto;
+    width: 30%;
+    grid-area: level;
+}
+
+
+#creatureLevelValue{
+    text-align: center;
+    margin: auto;
+    width: 30%;
+}
+
+#creatureDrops{
+    grid-area: drops;
+}
+
+#creatureWeapon{
+    grid-area: weapon;
+}
+
+#creatureInfo{
+    grid-area: info;
+}
+
+#creatureTitle{
+    grid-area: title;
+}
+
+.damageStat{
+    font-size: 200%;    
+}

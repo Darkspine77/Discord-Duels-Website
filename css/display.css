@@ -1,0 +1,44 @@
+body{
+    margin: 0;
+    background-color: #1E2023;
+}
+
+div > h2 > a{
+    text-decoration: none;
+    color:black;
+}
+
+div > h2 > a:hover{
+    text-decoration: none;
+    color: #E8EEF2;
+}
+
+#staticHeader{
+    top: 0;
+    width: 100%;
+    background-color: #333;
+}
+
+#header > ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    overflow: hidden;
+    background-color: #333;
+}
+
+#header > ul > li {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+#header{
+    display: flex;
+    justify-content: center;
+}

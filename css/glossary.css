@@ -36,14 +36,95 @@ body{
     width: 100%;
     position: fixed;
     background-color: #333;
+    z-index: 1;
+}
+#reel{
+    height: 10%;
+}
+
+#staticHeader > .contentDiv > p {
+    color: #000;
+}
+
+#staticHeader > .contentDiv > ul > li {
+    color: #000;
+}
+
+#staticHeader > .contentDiv > h1 {
+    color: #000;
+}
+
+.contentDiv > p {
+    color: #E8EEF2;
+}
+
+.contentDiv > ul > li {
+    color: #E8EEF2;
+}
+
+.contentDiv > h1 {
+    color: #E8EEF2;
+}
+
+.contentDiv > ul{
+    padding-left: 0; 
+    list-style-type: none;
+}
+
+.contentDiv > *{
+    margin-top: 0;
+    margin-bottom: 0;
+    border-color: black;
+    border-width: 3px;
+    border-right-style: solid;
+}
+
+.contentDiv > a{
+    text-decoration: none;
+    font-size: 36px;
+    color: #E8EEF2;
+}
+
+.contentDiv > a:hover{
+    color: #7289DA;
+}
+
+.contentDiv > ul > li > a {
+    text-decoration: none;
+    color: #E8EEF2;
+}
+
+.contentDiv > ul > li > a:hover {
+    text-decoration: none;
+    color: #7289DA;
+}
+
+.contentDiv {
+    background-color:#36393F;
+    margin-top:2%;
+    margin-bottom:2%;
+    display: flex;
+    flex-direction: row;
+    border-color: black;
+    border-width: 3px;
+    border-style: solid;
+    z-index: -1;
+}
+
+#reel > .contentDiv{
+    opacity: 0;
+    animation-name: fadeIn;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
 }
 
 .hidden{
     display: none;
 }
 
-#reel{
-    height: 10%;
-}
+@keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity: 1;}
+  }
 
 

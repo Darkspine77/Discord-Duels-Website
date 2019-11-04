@@ -4,12 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/glossary.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/glossaryWeapon.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/glossaryItem.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/glossaryEffect.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="css/glossaryCreature.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="css/glossary.css" />
+    
     <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
+    <script src="js/tools.js" defer></script>
+    <script src="js/glossaryEffect.js" defer></script>
+    <script src="js/glossaryItem.js" defer></script>
+    <script src="js/glossaryCreature.js" defer></script>
+    <script src="js/glossaryWeapon.js" defer></script>
     <script src="js/glossary.js" defer></script>
     <link rel="apple-touch-icon" sizes="57x57" href="images/ico/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="images/ico/apple-icon-60x60.png">
@@ -185,7 +191,7 @@
                         <option value="3">XYZ...</option>
                 </select>
         </div>
-        <div class="weaponDiv" id="weaponglossdiv" style="margin-top:2%; margin-bottom:0; background-color: #7289DA">
+        <div class="contentDiv" id="weaponglossdiv" style="margin-top:2%; margin-bottom:0; background-color: #7289DA">
             <h1 class="weaponName">Name</h1>
             <h1 class="weaponID">ID</h1>
             <h1 class="weaponTier">Tier</h1>
@@ -193,7 +199,7 @@
             <h1 class="statsList">Stats</h1>
             <h1 class="effectsList">Effects</h1>
         </div>
-        <div class="itemDiv hidden" id="itemglossdiv"  style="margin-bottom:0; background-color: #7289DA">
+        <div class="contentDiv" id="itemglossdiv"  style="margin-bottom:0; background-color: #7289DA">
             <h1 class="itemName">Name</h1>
             <h1 class="itemID">ID</h1>
             <h1 class="itemTier">Tier</h1>
@@ -201,14 +207,14 @@
             <h1 id="typeTitle" class="itemType">Type</h1>
             <h1 id="fusionsTitle" class="hidden fusionsList">Fusions</h1>
         </div>
-        <div class="creatureDiv hidden" id="creatureglossdiv"  style="margin-bottom:0; background-color: #7289DA">
+        <div class="contentDiv" id="creatureglossdiv"  style="margin-bottom:0; background-color: #7289DA">
                 <h1 class="creatureName">Name</h1>
                 <h1 class="creatureID">ID</h3>
                 <h1 class="creatureTier">Tier</h1>
                 <h1 class="creatureWeapon">Weapon</h1>
                 <h1 class="dropsList">Drops</h1>
         </div>
-        <div class="effectDiv hidden" id="effectglossdiv"  style="margin-bottom:0; background-color: #7289DA">
+        <div class="contentDiv" id="effectglossdiv"  style="margin-bottom:0; background-color: #7289DA">
                 <h1 class="effectName">Name</h1>
                 <h1 class="effectID">ID</h1>
                 <h1 class="effectDescription">Description</h1>

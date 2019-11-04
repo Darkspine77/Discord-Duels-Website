@@ -4,54 +4,6 @@
     justify-content: center;
 }
 
-#staticHeader > .effectDiv > p {
-    color: #000;
-}
-
-#staticHeader > .effectDiv > ul > li {
-    color: #000;
-}
-
-#staticHeader > .effectDiv > h1 {
-    color: #000;
-}
-
-.effectDiv > p {
-    color: #E8EEF2;
-}
-
-.effectDiv > ul > li {
-    color: #E8EEF2;
-}
-
-.effectDiv > h1 {
-    color: #E8EEF2;
-}
-
-.effectDiv > ul{
-    padding-left: 0; 
-    list-style-type: none;
-}
-
-.effectDiv > *{
-    margin-top: 0;
-    margin-bottom: 0;
-    border-color: black;
-    border-width: 3px;
-    border-right-style: solid;
-}
-
-.effectDiv {
-    background-color:#36393F;
-    margin-top:2%;
-    margin-bottom:2%;
-    display: flex;
-    flex-direction: row;
-    border-color: black;
-    border-width: 3px;
-    border-style: solid;
-}
-
 .effectName{
     max-width: 29%;
     min-width: 29%;
