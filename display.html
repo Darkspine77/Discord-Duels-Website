@@ -29,87 +29,156 @@
                 </ul>
         </div>
     </div>
-    <div id="itemDisplay" class="hidden">
-        <h1 id="itemTitle"></h1>  
+    <div id="itemDisplay" class="hidden mainContentDiv">
+        <div id="itemHeading">
+            <h1 id="itemTitle" class="headingText"></h1>
+            <p id="itemDesc" class="contentText"></p>
+        </div>
         <div id="itemInfo">
-                <h1 id="itemTier"></h1>
-                <h1 id="itemID"></h1>
-                <h1 id="itemValue"></h1> 
-                <h1 id="itemType"></h1>      
-            </div>
-        <p id="itemDesc"></p>
-        <p id="itemFunction" style="display: none"></p>
+                <h1>
+                    <span class="headingText">Tier: </span>
+                    <span id="itemTier" class="contentText"></span>
+                </h1>
+                <h1>
+                    <span class="headingText">ID: </span>
+                    <span id="itemID" class="contentText"></span>
+                </h1>
+                <h1>
+                    <span class="headingText">Sell Value: </span>
+                    <span id="itemValue" class="contentText"></span>
+                </h1>
+                <h1>
+                    <span class="headingText">Type: </span>
+                    <span id="itemType" class="contentText"></span>
+                </h1>   
+        </div>
+        <div id="itemFunctionContainer" style="display: none">
+            <h1 class="headingText">Usage</h1>
+            <p id="itemFunction" class="contentText"></p>
+        </div>
         <div id="fusionStats" style="display: none">
-            <h1 id="fusionTitle">Fusion Stats</h1>
+            <h1 id="fusionTitle" class="headingText">Fusion Stats</h1>
             <ul id="fusionList">
-                <li id="rDamageMod" class="itemStat">Rush Damage Modifier: 10%</li>
-                <li id="sDamageMod" class="itemStat">Strike Damage Modifier: 10%</li>
-                <li id="cDamageMod" class="itemStat">Counter Damage Modifier: 10%</li>
-                <li id="rResistanceMod" class="itemStat">Rush Resistance Modifier: 10%</li>
-                <li id="sResistanceMod" class="itemStat">Strike Resistance Modifier: 10%</li>
-                <li id="cResistanceMod" class="itemStat">Counter Damage Modifier: 10%</li>
+                <li>
+                    <span class="headingText2">Rush Damage Modifier:</span>
+                    <span id="rDamageMod" class="contentText"></span>
+                </li>
+                <li>
+                    <span class="headingText2">Strike Damage Modifier:</span>
+                    <span id="sDamageMod" class="contentText"></span>
+                </li>
+                <li>
+                    <span class="headingText2">Counter Damage Modifier:</span>
+                    <span id="cDamageMod" class="contentText"></span>
+                </li>
+                <li>
+                    <span class="headingText2">Rush Resistance Modifier:</span>
+                    <span id="rResistanceMod" class="contentText"></span>
+                </li>
+                <li>
+                    <span class="headingText2">Strike Resistance Modifier:</span>
+                    <span id="sResistanceMod" class="contentText"></span>
+                </li>
+                <li>
+                    <span class="headingText2">Counter Resistance Modifier:</span>
+                    <span id="cResistanceMod" class="contentText"></span>
+                </li>
             </ul>
         </div>
         <div id="itemLocations" style="display: none">
-            <h1>Drops From:</h1>
+            <h1 class="headingText">Drops From:</h1>
 
         </div>
     </div>
-    <div id="weaponDisplay">
-        <h1 id="weaponTitle"></h1>  
+    <div id="weaponDisplay" class="mainContentDiv">
+        <div id="weaponHeading">
+            <h1 id="weaponTitle" class="headingText"></h1>  
+            <p id="weaponDesc" class="contentText"></p>
+        </div>
         <div id="weaponInfo">
-            <h1 id="weaponTier"></h1>
-            <h1 id="weaponID"></h1>
-            <h1 id="weaponCost"></h1>      
+            <h1>
+                <span class="headingText">Tier: </span>
+                <span id="weaponTier" class="contentText"></span>
+            </h1>
+            <h1>
+                <span class="headingText">ID: </span>
+                <span id="weaponID" class="contentText"></span>
+            </h1>
+            <h1>
+                <span class="headingText">Upgrade Cost: </span>
+                <span id="weaponCost" class="contentText"></span>
+            </h1>  
         </div>
-        <p id="weaponDesc"></p>
-        <div id="weaponLevelModifier">
-            <h1 id="weaponLevel">Stats At Level</h1>
-            <input id="weaponLevelValue" value="1" type="text">
-            <input type="range" min="1" max="50" value="1" class="slider" id="weaponLevelSlider">
+        <div id="stats">
+            <div id="weaponLevelModifier">
+                <h1 id="weaponLevel" class="headingText">Stats At Level</h1>
+                <input id="weaponLevelValue" value="1" type="text">
+                <input id="weaponLevelSlider" type="range" min="1" max="50" value="1">
+            </div>
+            <p id="rDamageTitle" class="headingText">Rush Damage:</p>
+            <p id="rDamage" class="contentText"></p>
+            <p id="sDamageTitle" class="headingText">Strike Damage:</p>
+            <p id="sDamage" class="contentText"></p>
+            <p id="cDamageTitle" class="headingText">Counter Damage:</p>
+            <p id="cDamage" class="contentText"></p>
         </div>
-        <p id="rDamage" class="damageStat"></p>
-        <p id="sDamage" class="damageStat"></p>
-        <p id="cDamage" class="damageStat"></p>
         <div id="weaponEffects">
             
         </div>
         <div id="weaponLocations">
-            <h1>Drops From:</h1>
+            <h1 class="headingText">Drops From:</h1>
 
         </div>
     </div>
-    <div id="creatureDisplay">
-            <h1 id="creatureTitle"></h1>  
+    <div id="creatureDisplay" class="mainContentDiv">
+        <h1 id="creatureTitle" class="headingText"></h1>  
         <div id="creatureInfo">
-            <h1 id="creatureTier"></h1>
-            <h1 id="creatureID"></h1>
-            <h1 id="creatureHealth"></h1>      
+            <h1>
+                <span class="headingText">Tier: </span>
+                <span id="creatureTier" class="contentText"></span>
+            </h1>
+            <h1>
+                <span class="headingText">ID: </span>
+                <span id="creatureID" class="contentText"></span>
+            </h1>
+            <h1>
+                <span class="headingText">Health: </span>
+                <span id="creatureHealth" class="contentText"></span>
+            </h1>  
         </div>
-        <h2 id="creatureWeapon"></h2>
+        <div id="creatureWeaponContainer">
+            <h2 class="headingText">Weapon</h2>
+            <p id="creatureWeapon" class="contentText"></p>
+        </div>
         <div id="creatureLevelModifier">
-            <h1 id="creatureLevel">Stats At Level</h1>
+            <h1 id="creatureLevel" class="headingText">Stats At Level</h1>
             <input id="creatureLevelValue" value="1" type="text">
             <input type="range" min="1" max="50" value="1" class="slider" id="creatureLevelSlider">
         </div>
         <div id="creatureDrops">
-            <h1>Drops</h1>
+            <h1 class="headingText">Drops</h1>
 
         </div>
     </div>
-    <div id="effectDisplay">
-            <h1 id="effectTitle"></h1>  
+    <div id="effectDisplay" class="mainContentDiv">
+        <h1 id="effectTitle" class="headingText"></h1>  
         <div id="effectInfo">
-            <h1 id="effectID"></h1>   
+            <h1>
+                <span class="headingText">ID: </span>
+                <span id="effectID" class="contentText"></span>
+            </h1>
         </div>
-        <h1 id="effectDescription"></h1>
+        <div id="effectDescriptionContainer">
+            <h1 class="headingText">Description</h1>
+            <p id="effectDescription" class="contentText"></p>
+        </div>
         <div id="effectLevelModifier">
-            <h1 id="effectLevel">Stats At Level</h1>
+            <h1 id="effectLevel" class="headingText">Stats At Level</h1>
             <input id="effectLevelValue" value="1" type="text">
             <input type="range" min="1" max="50" value="1" class="slider" id="effectLevelSlider">
         </div>
         <div id="effectWeapons">
-            <h1>Found On Weapons</h1>
+            <h1 class="headingText">Found On Weapons</h1>
 
         </div>
     </div>

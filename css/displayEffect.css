@@ -1,47 +1,28 @@
 #effectDisplay{
-    margin-left: 5%;
-    margin-right: 5%;
-    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto auto auto auto auto;
     grid-template-areas:
-    "title title info" 
-    "desc desc desc"
-    "level level level"
+    "title title title" 
+    "info level desc"
     "weapons weapons weapons"
     "prev home next"
 }
 
-#effectDisplay > * {
-  padding: 2%;
-  text-align: center;
-  background-color:#7289DA;
-  border-color: #4F5F99;
-  border-width: 10px;
-  border-style: solid;
-}
 
 #effectLevelModifier{
     display: flex;
     flex-direction: column;
     padding: 0;
-    margin: auto;
-    width: 30%;
     grid-area: level;
 }
 
-#effectDescription{
+#effectDescriptionContainer{
     grid-area: desc;
 }
 
 #effectLevelValue{
     text-align: center;
     margin: auto;
-    width: 30%;
-}
-
-#effectDrops{
-    grid-area: drops;
 }
 
 #effectWeapons{
@@ -54,4 +35,18 @@
 
 #effectTitle{
     grid-area: title;
+}
+
+@media (max-width: 600px){
+    #effectDisplay{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto auto auto auto auto;
+        grid-template-areas:
+        "title title title" 
+        "info info info"
+        "level level level"
+        "desc desc desc"
+        "weapons weapons weapons"
+        "prev home next"
+    }
 }
