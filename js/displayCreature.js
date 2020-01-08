@@ -21,7 +21,7 @@ function creatureLevelSet(){
 }
 
 function adjustCreatureStatsForLevel(level){
-    document.getElementById("creatureHealth").innerHTML = "Health: " + Math.ceil(data.base_health * (supplementaryData.healthMod * level))
+    document.getElementById("creatureHealth").innerHTML = Math.ceil(data.base_health * (supplementaryData.healthMod * level))
 }
 
 function loadExternalCreatureData(callback){
@@ -37,9 +37,9 @@ function visualizeCreature(){
         document.getElementById("creatureLevelValue").addEventListener("input",creatureLevelSet)
 
         document.getElementById("creatureTitle").innerHTML = data.name
-        document.getElementById("creatureTier").innerHTML = "Tier: " + data.tier
-        document.getElementById("creatureID").innerHTML = "ID: " + data.id
-        document.getElementById("creatureWeapon").innerHTML = "Weapon : " + data.weapon.name
+        document.getElementById("creatureTier").innerHTML = data.tier
+        document.getElementById("creatureID").innerHTML = data.id
+        document.getElementById("creatureWeapon").innerHTML = data.weapon.name
         if(data.drops){
             data.drops.sort(function(a,b){
                 if(a.chance > b.chance){
@@ -60,6 +60,7 @@ function visualizeCreature(){
                     } else {
                         droplink.href = "display.html?contentType=item&id=" + (drop.id - 1)
                     }
+                    droplink.classList.add("headingText2")
                     droplink.innerHTML = drop.name
                     dropelement.appendChild(droplink)
                 } else {
@@ -68,10 +69,12 @@ function visualizeCreature(){
                     } else {
                         dropelement.innerHTML = "Nothing: " + parseFloat(drop.chance).toPrecision(2) + "%"
                     }
+                    dropelement.classList.add("headingText2")
                 }
                 dropDiv.appendChild(dropelement)
 
                 var dropDescription = document.createElement("p")
+                dropDescription.classList.add("contentText")
                 dropDescription.innerHTML = parseFloat(drop.chance).toPrecision(2) + "% Chance"
                 dropDiv.appendChild(dropDescription)
         

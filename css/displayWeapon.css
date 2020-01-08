@@ -1,26 +1,11 @@
 #weaponDisplay{
-    margin-left: 5%;
-    margin-right: 5%;
-    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: auto auto auto auto auto auto auto;
+    grid-template-rows: auto auto auto auto;
     grid-template-areas:
-    "title title info" 
-    "desc desc desc"
-    "level level level"
-    "rush strike counter"
-    "effects effects effects"
+    "title title title" 
+    "info effects stats"
     "location location location"
     "prev home next"
-}
-
-#weaponDisplay > * {
-  padding: 2%;
-  text-align: center;
-  background-color:#7289DA;
-  border-color: #4F5F99;
-  border-width: 10px;
-  border-style: solid;
 }
 
 #weaponDesc{
@@ -37,7 +22,7 @@
     flex-direction: column;
     padding: 0;
     margin: auto;
-    width: 30%;
+    width: 80%;
     grid-area: level;
 }
 
@@ -54,26 +39,29 @@
 
 #weaponInfo{
     grid-area: info;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
 
-#rDamage{
-    grid-area: rush;
+#stats{
+    grid-area:stats
 }
 
-#sDamage{
-    grid-area: strike;
-}
-
-#cDamage{
-    grid-area: counter;
-}
-
-#weaponTitle{
+#weaponHeading{
     grid-area: title;
 }
 
-.damageStat{
-    font-size: 200%;    
+@media (max-width: 600px){
+    #weaponDisplay{
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-rows: auto auto auto auto auto auto;
+        grid-template-areas:
+        "title title title" 
+        "info info info"
+        "stats stats stats"
+        "effects effects effects"
+        "location location location"
+        "prev home next"
+    }
 }
-
-
