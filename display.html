@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -114,4 +115,122 @@
         </div>
     </div>
 </body>
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://www.gstatic.com/firebasejs/3.6.9/firebase.js"></script>
+    <link rel="stylesheet" type="text/css" media="screen" href="css/display.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/displayWeapon.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/displayItem.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/displayCreature.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="css/displayEffect.css" />
+    <script src="js/tools.js" defer></script>
+    <script src="js/displayWeapon.js" defer></script>
+    <script src="js/displayItem.js" defer></script>
+    <script src="js/displayCreature.js" defer></script>
+    <script src="js/displayEffect.js" defer></script>
+    <script src="js/display.js" defer></script>
+    <title>Document</title>
+</head>
+<body>
+    <div id="staticHeader">
+        <div id="header">
+                <ul>
+                    <li><button id="showWeapons">Weapons</button></li>
+                    <li><button id="showItems">Items</button></li>
+                    <li><button id="showCreatures">Creatures</button></li>
+                    <li><button id="showEffects">Effects</button></li>
+                </ul>
+        </div>
+    </div>
+    <div id="itemDisplay" class="hidden">
+        <h1 id="itemTitle"></h1>  
+        <div id="itemInfo">
+                <h1 id="itemTier"></h1>
+                <h1 id="itemID"></h1>
+                <h1 id="itemValue"></h1> 
+                <h1 id="itemType"></h1>      
+            </div>
+        <p id="itemDesc"></p>
+        <p id="itemFunction" style="display: none"></p>
+        <div id="fusionStats" style="display: none">
+            <h1 id="fusionTitle">Fusion Stats</h1>
+            <ul id="fusionList">
+                <li id="rDamageMod" class="itemStat">Rush Damage Modifier: 10%</li>
+                <li id="sDamageMod" class="itemStat">Strike Damage Modifier: 10%</li>
+                <li id="cDamageMod" class="itemStat">Counter Damage Modifier: 10%</li>
+                <li id="rResistanceMod" class="itemStat">Rush Resistance Modifier: 10%</li>
+                <li id="sResistanceMod" class="itemStat">Strike Resistance Modifier: 10%</li>
+                <li id="cResistanceMod" class="itemStat">Counter Damage Modifier: 10%</li>
+            </ul>
+        </div>
+        <div id="itemLocations" style="display: none">
+            <h1>Drops From:</h1>
+
+        </div>
+    </div>
+    <div id="weaponDisplay">
+        <h1 id="weaponTitle"></h1>  
+        <div id="weaponInfo">
+            <h1 id="weaponTier"></h1>
+            <h1 id="weaponID"></h1>
+            <h1 id="weaponCost"></h1>      
+        </div>
+        <p id="weaponDesc"></p>
+        <div id="weaponLevelModifier">
+            <h1 id="weaponLevel">Stats At Level</h1>
+            <input id="weaponLevelValue" value="1" type="text">
+            <input type="range" min="1" max="50" value="1" class="slider" id="weaponLevelSlider">
+        </div>
+        <p id="rDamage" class="damageStat"></p>
+        <p id="sDamage" class="damageStat"></p>
+        <p id="cDamage" class="damageStat"></p>
+        <div id="weaponEffects">
+            
+        </div>
+        <div id="weaponLocations">
+            <h1>Drops From:</h1>
+
+        </div>
+    </div>
+    <div id="creatureDisplay">
+            <h1 id="creatureTitle"></h1>  
+        <div id="creatureInfo">
+            <h1 id="creatureTier"></h1>
+            <h1 id="creatureID"></h1>
+            <h1 id="creatureHealth"></h1>      
+        </div>
+        <h2 id="creatureWeapon"></h2>
+        <div id="creatureLevelModifier">
+            <h1 id="creatureLevel">Stats At Level</h1>
+            <input id="creatureLevelValue" value="1" type="text">
+            <input type="range" min="1" max="50" value="1" class="slider" id="creatureLevelSlider">
+        </div>
+        <div id="creatureDrops">
+            <h1>Drops</h1>
+
+        </div>
+    </div>
+    <div id="effectDisplay">
+            <h1 id="effectTitle"></h1>  
+        <div id="effectInfo">
+            <h1 id="effectID"></h1>   
+        </div>
+        <h1 id="effectDescription"></h1>
+        <div id="effectLevelModifier">
+            <h1 id="effectLevel">Stats At Level</h1>
+            <input id="effectLevelValue" value="1" type="text">
+            <input type="range" min="1" max="50" value="1" class="slider" id="effectLevelSlider">
+        </div>
+        <div id="effectWeapons">
+            <h1>Found On Weapons</h1>
+
+        </div>
+    </div>
+</body>
+>>>>>>> parent of b8cb9b6... Glossary 0.3
 </html>
