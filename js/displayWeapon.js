@@ -156,25 +156,28 @@ function getEffectCost(effect,tier){
 }
 
 function adjustWeaponStatsForLevel(level){
-    document.getElementById("weaponCost").innerHTML = data.goldToUpgrade * level
-    document.getElementById("rDamage").innerHTML = findScaledValue(data.moveDamage[0],level)
-    document.getElementById("sDamage").innerHTML = findScaledValue(data.moveDamage[1],level)
-    document.getElementById("cDamage").innerHTML = findScaledValue(data.moveDamage[2],level)
+    document.getElementById("weaponCost").innerHTML = "Upgrade Cost: " + data.goldToUpgrade * level
+    document.getElementById("rDamage").innerHTML = "Rush Damage: " + findScaledValue(data.moveDamage[0],level)
+    document.getElementById("sDamage").innerHTML = "Strike Damage: " + findScaledValue(data.moveDamage[1],level)
+    document.getElementById("cDamage").innerHTML = "Counter Damage: " + findScaledValue(data.moveDamage[2],level)
+    document.getElementById("weaponEffects").innerHTML = "<h1>Effects:</h1>"
     if(data.effectIDs){
-        document.getElementById("weaponEffects").innerHTML = "<h1 class='headingText'>Effects:</h1>"
         for(var effect of supplementaryData.effects){
             var effectDiv = document.createElement("div")
             
             var effectTitle = document.createElement("h2")
             var effectLink = document.createElement("a")
+<<<<<<< HEAD
             effectLink.classList.add("headingText2")
             effectLink.href = "display.html?contentType=effect&id=" + (effect.id)
+=======
+            effectLink.href = "display.html?contentType=effect&id=" + (effect.id - 1)
+>>>>>>> parent of b8cb9b6... Glossary 0.3
             effectLink.innerHTML = effect.name
             effectTitle.appendChild(effectLink)
             effectDiv.appendChild(effectTitle)
     
             var effectDescription = document.createElement("p")
-            effectDescription.classList.add("contentText")
             effectDescription.innerHTML = createDescription(effect,level)
             effectDiv.appendChild(effectDescription)
     
@@ -212,7 +215,6 @@ function loadExternalWeaponData(callback){
             }
         })
     } else if(data.creatureIDs){
-        document.getElementById("weaponLocations").style.gridArea = "effects"
         firebase.database().ref("creatures").once('value').then(function(snapshot){
             supplementaryData.creatures = []
             for(var id of data.creatureIDs){
@@ -229,7 +231,6 @@ function loadExternalWeaponData(callback){
             callback()
         })
     } else {
-        document.getElementById("weaponDisplay").style.gridTemplateAreas = '"title title title" "info stats stats" "prev home next"'
         callback()
     }   
 }
@@ -242,8 +243,8 @@ function visualizeWeapon(){
         document.getElementById("weaponLevelValue").addEventListener("input",weaponLevelSet)
         
         document.getElementById("weaponTitle").innerHTML = data.name
-        document.getElementById("weaponTier").innerHTML =  data.tier
-        document.getElementById("weaponID").innerHTML = data.id  
+        document.getElementById("weaponTier").innerHTML = "Tier: " + data.tier
+        document.getElementById("weaponID").innerHTML = "ID: " + data.id  
         document.getElementById("weaponDesc").innerHTML = data.description
         if(data.creatureIDs){
             for(var creature of supplementaryData.creatures){
@@ -253,14 +254,12 @@ function visualizeWeapon(){
                 
                 var creatureName = document.createElement("h2")
                 var creatureLink = document.createElement("a")
-                creatureLink.classList.add("headingText2")
                 creatureLink.href = "display.html?contentType=creature&id=" + (creature[0].id - 1)
                 creatureLink.innerHTML = creature[0].name
                 creatureName.appendChild(creatureLink)
                 creatureDiv.appendChild(creatureName)
         
                 var creatureDescription = document.createElement("p")
-                creatureDescription.classList.add("contentText")
                 creatureDescription.innerHTML = creature[1] + "% Drop Chance"
                 creatureDiv.appendChild(creatureDescription)
         

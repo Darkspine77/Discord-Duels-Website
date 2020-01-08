@@ -1,15 +1,29 @@
 #itemDisplay{
+    margin-left: 5%;
+    margin-right: 5%;
+    display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: auto auto auto auto auto auto;
     grid-template-areas:
-    "title title title" 
-    "info stats stats"
+    "title title info" 
+    "desc desc desc"
+    "func func func"
+    "stats stats stats"
     "location location location"
     "prev home next"
 }
 
+#itemDisplay > * {
+  padding: 2%;
+  text-align: center;
+  background-color:#7289DA;
+  border-color: #4F5F99;
+  border-width: 10px;
+  border-style: solid;
+}
+
 #itemFunction{
-    margin: 0;
+    grid-area: func;
 }
 
 #fusionStats{
@@ -21,6 +35,18 @@
     list-style-type: none;
 }
 
+#fusionTitle{
+
+}
+
+.itemStat{
+    
+}
+
+#itemDesc{
+    grid-area: desc;
+}
+
 #itemLocations{
     grid-area: location;
 }
@@ -29,23 +55,10 @@
     grid-area: info;
 }
 
-#itemHeading{
+#itemTitle{
     grid-area: title;
 }
 
 .damageStat{
     font-size: 200%;    
-}
-
-@media (max-width: 600px){
-    #itemDisplay{
-        grid-template-columns: 1fr 1fr 1fr;
-        grid-template-rows: auto auto auto auto auto auto;
-        grid-template-areas:
-        "title title title" 
-        "info info info"
-        "stats stats stats"
-        "location location location"
-        "prev home next"
-    }
 }

@@ -1,6 +1,6 @@
 body{
     margin: 0;
-    background-color: #484747;
+    background-color: #1E2023;
 }
 
 div > h2 > a{
@@ -11,39 +11,6 @@ div > h2 > a{
 div > h2 > a:hover{
     text-decoration: none;
     color: #E8EEF2;
-}
-
-.mainContentDiv{
-    margin-top: 2%;
-    margin-left: 10%;
-    margin-right: 10%;
-    display: grid;
-    border-color: #1D1D1D;
-    border-width: 10px;
-    border-style: solid;
-    border-radius: 20px; 
-    background-color:#333;
-}
-
-.mainContentDiv > * {
-    margin: 0;
-    padding: 2%;
-    text-align: center;
-    background-color:#333;
-    border-color: #1D1D1D;
-    border-width: 10px;
-    border-style: solid;
-}
-
-@media (max-width: 600px){
-    .mainContentDiv > *  {
-        padding: 4%;
-    }
-
-    .mainContentDiv{
-        margin-left: 0;
-        margin-right: 0;
-    }
 }
 
 #staticHeader{
@@ -75,15 +42,3 @@ div > h2 > a:hover{
     display: flex;
     justify-content: center;
 }
-
-.headingText{
-    color: #7289DA
-}
-
-.headingText2{
-    color: #5E71B3
-}
-
-.contentText{
-    color: #E8EEF2;
-} 

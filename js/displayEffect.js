@@ -7,7 +7,6 @@ function visualizeEffect(){
             for(var id of data.weaponIDs){
                 var weapon = document.createElement("h2")
                 var weaponLink = document.createElement("a")
-                weaponLink.classList.add("headingText2")
                 weaponLink.href = "display.html?contentType=weapon&id=" + id
                 weaponLink.innerHTML = weapons[id].name
                 weapon.appendChild(weaponLink)
@@ -18,7 +17,7 @@ function visualizeEffect(){
 
             adjustEffectStatsForLevel(1)
             document.getElementById("effectTitle").innerHTML = data.name;
-            document.getElementById("effectID").innerHTML = data.id;
+            document.getElementById("effectID").innerHTML = "ID: " + data.id;
         })
     } else {
         document.getElementById("effectLevelSlider").addEventListener("input",effectLevelAdjust)
@@ -26,7 +25,7 @@ function visualizeEffect(){
 
         adjustEffectStatsForLevel(1)
         document.getElementById("effectTitle").innerHTML = data.name;
-        document.getElementById("effectID").innerHTML = data.id;
+        document.getElementById("effectID").innerHTML = "ID: " + data.id;
     }
 }
 
