@@ -34,7 +34,7 @@ function adjustWeaponStatsForLevel(level){
             var effectTitle = document.createElement("h2")
             var effectLink = document.createElement("a")
             effectLink.classList.add("headingText2")
-            effectLink.href = "display.html?contentType=effect&id=" + (effect.id - 1)
+            effectLink.href = "display.html?contentType=effect&id=" + (effect.id)
             effectLink.innerHTML = effect.name
             effectTitle.appendChild(effectLink)
             effectDiv.appendChild(effectTitle)
@@ -54,7 +54,7 @@ function loadExternalWeaponData(callback){
         firebase.database().ref("effects").once('value').then(function(snapshot){
             supplementaryData.effects = []
             for(var id of data.effectIDs){
-                supplementaryData.effects.push(snapshot.val()[id - 1])
+                supplementaryData.effects.push(snapshot.val()[id])
             }
             document.getElementById("weaponEffects").style.display = "block";
             if(data.creatureIDs){
