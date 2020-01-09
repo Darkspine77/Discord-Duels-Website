@@ -159,7 +159,7 @@ function populateWeaponContent(type,filter,sort){
                     for(var i in weapon.effects){
                         var effectelement = document.createElement("li")
                         var link = document.createElement("a")
-                        link.href = "display.html?contentType=effect&id=" + (weapon.effectIDs[i] - 1)
+                        link.href = "display.html?contentType=effect&id=" + (weapon.effectIDs[i])
                         link.innerHTML = weapon.effects[i]
                         effectelement.appendChild(link)
                         effects.appendChild(effectelement)
