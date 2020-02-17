@@ -21,6 +21,143 @@ function weaponLevelSet(){
     adjustWeaponStatsForLevel(level)
 }
 
+
+
+var phdVal = 4952
+
+var tierValues = {
+    "1":450,
+    "2":900,
+    "3":1350,
+    "4":1800,
+    "5":2250,
+    "6":2700,
+    "7":3150,
+    "8":3600,
+    "9":4050,
+    "10":4500,
+    "rare":2700,
+    "faction":3150,
+    "boss":4000,
+    //boss may reach 7500
+    "legendary":0,
+    "roaming":3600
+}
+
+function getWeaponScore(weapon){
+    var points = weapon.moveDamage[0][1] + weapon.moveDamage[1][1] + weapon.moveDamage[2][1]
+    if(weapon.effects){
+        firebase.database().ref("effects").once('value').then(function(snapshot){
+            var effectsData = snapshot.val()
+            for(var i = 0;i<weapon.effects.length;i++){
+                for(var effect of effectsData){
+                    if(effect.name == weapon.effects[i]){
+                        points += getEffectCost(effect,weapon.tier)
+                        break;
+                    }
+                }
+            }
+            console.log(points)
+        })
+    } else {
+        console.log(points)
+    }
+}
+
+
+function getEffectCost(effect,tier){
+    console.log(effect.name)
+    var score = 0;
+	if(effect.modifier[0] != 0){
+		switch(effect.effectModifier){
+			case "damage":
+				score += effect.modifier[1] 
+				break;
+			case "lessdamage":
+				score -= effect.modifier[1] * 0.8 
+				break;
+			case "heal":
+				score += effect.modifier[1] * 1.2   
+				break;
+			case "%damage":
+				score += (effect.modifier[0] * phdVal) * 5
+				break;
+		}
+    }
+	if(effect.modiferValueEqualsCounters){
+		score *= 10
+    }
+	if(effect.recoil[1] > 0){
+		score -= effect.recoil[1]
+    }
+	if(effect.applyStatus){
+		var effectScore = 0
+		switch(effect.statusEffect){
+			case "wound":
+                effectScore += effect.statusStrength[1] * effect.statusDuration
+                break;
+			case "stun":
+                effectScore += tierValues[tier] * effect.statusDuration
+                break;
+			case "stagger":
+                effectScore += (tierValues[tier] * 0.6) * effect.statusDuration
+                break;
+			case "dizzy":
+                effectScore += (effect.statusStrength[0] * (tierValues[tier] * 1.5)) * effect.statusDuration
+                break;
+			case "invulnerable":
+                effectScore -= (tierValues[tier] * 2) * effect.statusDuration
+                break;
+			case "speAug":
+                effectScore -= ((effect.statusStrength[0] - 1) * tierValues[tier]) * effect.statusDuration
+                break;
+			case "resAug":
+                effectScore -= ((effect.statusStrength[0] - 1) * tierValues[tier]) * effect.statusDuration
+                break;
+			case "strAug":
+                effectScore -= ((effect.statusStrength[0] - 1) * tierValues[tier]) * effect.statusDuration
+                break;
+		}
+		if(effect.statusTarget == "self"){
+            effectScore = -effectScore
+            effectScore += effect.statusDuration * 100
+		}
+		score += effectScore
+    }
+	if(effect.clearCounters){
+		score -= 100
+    }
+	if(effect.requiresCounters){
+		var count = 0;
+		if(!isNaN(effect.requiredCounters)){
+			count = effect.requiredCounters
+		} else {
+			for(var i = 0;i<3;i++){
+				if(effect.requiredCounters[i] != -1){
+					count += effect.requiredCounters[i]
+				}
+			}
+        }
+        if(effect.requiredCounters == 1){
+            score /= 5
+        } else {
+            for(var i = 0;i<count;i++){
+                score *= 0.9
+            }
+        }
+		
+    }
+	if(effect.requiresSuccess != 0){
+		score /= 3
+    }
+	if(effect.chance != 0 && effect.chance != 100){
+		score *= effect.chance/100
+    }
+    score *= effect.effectOnMoves.length
+    console.log(score)
+	return Math.ceil(score)
+}
+
 function adjustWeaponStatsForLevel(level){
     document.getElementById("weaponCost").innerHTML = data.goldToUpgrade * level
     document.getElementById("rDamage").innerHTML = findScaledValue(data.moveDamage[0],level)
@@ -133,5 +270,6 @@ function visualizeWeapon(){
                 document.getElementById("weaponLocations").appendChild(creatureDiv)
             }
         }
+        getWeaponScore(data)
     })
 } 
