@@ -128,7 +128,7 @@ function createDescription(effect,level){
 		if(effect.statusEffect == "invulnerable"){
 			description += " a invulnerability effect"
 		}
-		if(effect.statusEffect == "speAug" || effect.statusEffect == "speMod"){
+		if(effect.statusEffect == "refAug" || effect.statusEffect == "refMod"){
 			if(effect.statusStrength[0] > 1){
 				description += " a hasting effect of SER%"
 			} else {
@@ -142,7 +142,7 @@ function createDescription(effect,level){
 				description += " a weakening effect of SER%"
 			}
 		}
-		if(effect.statusEffect == "resAug" || effect.statusEffect == "resMod"){
+		if(effect.statusEffect == "conAug" || effect.statusEffect == "conMod"){
 			if(effect.statusStrength[0] > 1){
 				description += " a fortifying effect of SER%"
 			} else {

@@ -1,4 +1,4 @@
-function    filterWeapons(){
+function filterWeapons(){
     resetDisplay(0)
     populateItems("weapons",{tier:document.getElementById("weaponTierSelected").value},{normal:document.getElementById("weaponSortSelected").value})
 }
