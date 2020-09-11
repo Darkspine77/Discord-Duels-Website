@@ -256,5 +256,9 @@ function printItemFunction(drop,callback){
 		}
         finalMessage += "Fusing with this item changes a Lost One's ultimate ability to " + ult_name
         return finalMessage
+	} else if(drop.type == "bossfrag"){
+		finalMessage += "Fusing with this item will prompt you to transcend. After transcending with this item, you will be rewarded with the weapon: " + getItemByValue(data.weapons,"id",drop.weapon).name 
+	} else if(drop.type == "infinity"){
+		finalMessage += "Fusing with this item while having a custom weapon equipped will reset the weapon to level 1 allowing it to gain more customization points through level up which allows for the weapon to be further modified. You will gain chaos fragments and nexus shards based on the level of the custom weapon when the fusion is complete."
 	}
 }
